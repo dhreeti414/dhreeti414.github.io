@@ -1,0 +1,166 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cursive', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(135deg, #f3e7e9, #e3eeff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    position: relative;
+}
+
+/* Background Particle Animation */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Adding floating circles as decorative elements */
+.background .circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 182, 193, 0.3);
+    animation: float 10s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+/* Circle Styling */
+.circle.small {
+    width: 30px;
+    height: 30px;
+    bottom: 20%;
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.circle.medium {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    right: 30%;
+    animation-duration: 12s;
+}
+
+.circle.large {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 70%;
+    animation-duration: 15s;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(45deg);
+    }
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Name Styling */
+.name {
+    font-size: 3.5em;
+    color: #ff69b4;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    animation: floatText 3s ease-in-out infinite;
+}
+
+/* Role Styling */
+.role {
+    font-size: 1.5em;
+    color: #d8bfd8;
+    animation: fadeIn 3s forwards;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* LinkedIn Link Styling */
+.linkedin-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ffb6c1;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1em;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin-link:hover {
+    box-shadow: 0 0 15px #ff69b4;
+    transform: scale(1.05);
+}
+
+/* Floating Text Animation */
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5em;
+    }
+
+    .role {
+        font-size: 1.2em;
+    }
+
+    .linkedin-link {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .name {
+        font-size: 2em;
+    }
+
+    .role {
+        font-size: 1em;
+    }
+
+    .linkedin-link {
+        font-size: 0.8em;
+    }
+}
